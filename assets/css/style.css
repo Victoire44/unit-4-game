@@ -1,0 +1,8 @@
+body{
+    background-image: url("../images/food.png")
+}
+
+h1, #random-number{
+    font-size: 60px;
+    font-family: 'Lobster', cursive;
+}
