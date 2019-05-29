@@ -40,10 +40,16 @@ $(document).ready(function () {
             else if (totalScore > randomNumber) {
                 losses++
                 $("#losses").text("Losses: " + losses)
-                $("#message").text("You losse !")
+                $("#message").text("You lose !")
                 reset()
                 
             }
         });
-    }
+
+    };
+
+    $("#reset").on('click', function () {
+        reset()
+    });
+
 });
