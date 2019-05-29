@@ -17,7 +17,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body style="font-family: 'Lobster', cursive;font-size: 60px;">
 
     <h1 class="text-center m-5">Ice-Cream Collector !</h1>
 
@@ -25,42 +25,44 @@
 
     <div class="container mt-5">
 
-        <div class="card">
+        <div class="card bg-light">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="assets/images/ice-cream1.png" id="button-1"
+                        <img src="assets/images/ice-cream1.png" alt="ice-cream" id="button-1"
                             class="btn btn-primary img-thumbnail img-fluid mb-1">
                     </div>
 
                     <div class="col-md-3">
-                        <img src="assets/images/ice-cream2.png" id="button-2"
-                            class="btn btn-primary img-thumbnail img-fluid mt-1">
+                        <img src="assets/images/ice-cream2.png" alt="ice-cream" id="button-2"
+                            class="btn btn-primary img-thumbnail img-fluid mb-1">
                     </div>
 
-                    <div class="col-md-3 text-center m-3 border">
+                    <div class="col-md-3 text-center border p-5 mb-1" alt="ice-cream" style="background: #ffeed1;">
                         <div id="random-number"></div>
                     </div>
 
-                    <div class="col-md-2 m-3 border">
-                        <div id="wins"></div>
-                        <div id="losses"></div>
+                    <div class="col-md-3 border p-5 mb-1" alt="ice-cream" style="background: #ffeed1;">
+                        <div id="wins" style="font-size: 30px">Wins : 0</div>
+                        <div id="losses" style="font-size: 30px">Losses : 0 </div>
+                        <div id="message"></div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-3">
                         <img src="assets/images/ice-cream3.png" id="button-3"
-                            class="btn btn-primary button-3 img-thumbnail img-fluid mb-1">
+                            class="btn btn-primary img-thumbnail img-fluid mt-1">
                     </div>
 
                     <div class="col-md-3">
                         <img src="assets/images/ice-cream4.png" id="button-4"
-                            class="btn btn-primary button-4 img-thumbnail img-fluid mt-1">
+                            class="btn btn-primary img-thumbnail img-fluid mt-1">
                     </div>
 
-                    <div class="col-md-6border">
-                        <div id="total"></div>
+                    <div class="col-md-6 border p-5 mt-1" style="background: #ffeed1;">
+                        <p class="text-center" style="font-size: 30px">Your total score is: </p>
+                        <div id="totalScore" class="text-center p-4"></div>
                     </div>
                 </div>
             </div>

@@ -1,87 +1,49 @@
 $(document).ready(function () {
 
-    var randomNumber = ""
-    var random = []
-
-    var wins = 0
-    var losses = 0
-    var total = 0
+    var randomNumber;
+    var random = [];
+    var wins = 0;
+    var losses = 0;
+    var totalScore;
 
     //Function to initialize the game
     function reset() {
-        randomNumber = ""
-        wins = 0
-        losses = 0
-        total = 0
-        random[0] = Math.floor(Math.random() * 11) + 1
-        random[1] = Math.floor(Math.random() * 11) + 1
-        random[2] = Math.floor(Math.random() * 11) + 1
-        random[3] = Math.floor(Math.random() * 11) + 1
+        //Random number at the start of each game
+        randomNumber = Math.floor(Math.random() * 101) + 19
+        $("#random-number").text(randomNumber)
+        totalScore = 0;
+        $("#totalScore").text(totalScore)
+        console.log(totalScore)
+
+        for (var i = 0; i < 4; i++) {
+            random[i] = Math.floor(Math.random() * 11) + 1
+        }
+        console.log(random)
     }
     reset();
 
-    //Random number at the start of the game
-    randomNumber = Math.floor(Math.random() * 101) + 19
-    $("#random-number").text(randomNumber)
 
+    //when you click on the image, the total score incrementes
+    for (let i = 0; i < 4; i++) {
+        $("#button-" + (i + 1)).on('click', function () {
+            totalScore += random[i]
+            $("#totalScore").text(totalScore)
 
-    //when you click on the image, the total adds up
+            console.log("total: " + totalScore)
 
-    $("#button-1").on('click', function () {
-        total =+ random[0]
-        $("#total").text(total)
-        console.log(total)
-    })
-    $("#button-2").on('click', function () {
-        total += random[1]
-        $("#total").text(total)
-        console.log(total)
-    })
-    $("#button-3").on('click', function () {
-        total += random[2]
-        $("#total").text(total)
-        console.log(total)
-    })
-    $("#button-4").on('click', function () {
-        total += random[3]
-        $("#total").text(total)
-        console.log(total)
-    })
-
-
-    // if (total = randomNumber) {
-    //     wins++;
-    //     reset()
-    //     alert("You win")
-    // }
-    // else {
-    //     losses--
-        
-    // alert("You lost")
-    //   reset()
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            //If the total matches with the number to guess, le winning score increases, a winner message appears and the game resets.
+            if (totalScore === randomNumber) {
+                wins++
+                $("#wins").text("Wins: " + wins)
+                reset()
+            }
+            // However, if the total is superior at the number to guess, the lossing score increases, a loser message appears and the game resets.
+            else if (totalScore > randomNumber) {
+                losses++
+                $("#losses").text("Losses: " + losses)
+                reset()
+                console.log("looser")
+            }
+        });
+    }
 });
