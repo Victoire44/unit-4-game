@@ -13,12 +13,11 @@ $(document).ready(function () {
         $("#random-number").text(randomNumber)
         totalScore = 0;
         $("#totalScore").text(totalScore)
-        console.log(totalScore)
 
         for (var i = 0; i < 4; i++) {
             random[i] = Math.floor(Math.random() * 11) + 1
         }
-        console.log(random)
+      
     }
     reset();
 
@@ -28,21 +27,22 @@ $(document).ready(function () {
         $("#button-" + (i + 1)).on('click', function () {
             totalScore += random[i]
             $("#totalScore").text(totalScore)
-
-            console.log("total: " + totalScore)
+            $("#message").text("")
 
             //If the total matches with the number to guess, le winning score increases, a winner message appears and the game resets.
             if (totalScore === randomNumber) {
                 wins++
                 $("#wins").text("Wins: " + wins)
+                $("#message").text("You win !")
                 reset()
             }
             // However, if the total is superior at the number to guess, the lossing score increases, a loser message appears and the game resets.
             else if (totalScore > randomNumber) {
                 losses++
                 $("#losses").text("Losses: " + losses)
+                $("#message").text("You losse !")
                 reset()
-                console.log("looser")
+                
             }
         });
     }
