@@ -21,8 +21,8 @@ $(document).ready(function () {
     }
     reset();
 
-
     //when you click on the image, the total score incrementes
+    // This code doesn't work with `var` so I use let
     for (let i = 0; i < 4; i++) {
         $("#button-" + (i + 1)).on('click', function () {
             totalScore += random[i]
@@ -41,13 +41,10 @@ $(document).ready(function () {
                 losses++
                 $("#losses").text("Losses: " + losses)
                 $("#message").text("You lose !")
-                reset()
-                
+                reset()  
             }
         });
-
     };
-
     $("#reset").on('click', function () {
         reset()
     });
