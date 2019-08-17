@@ -22,31 +22,35 @@ $(document).ready(function () {
     reset();
 
     //when you click on the image, the total score incrementes
-    // This code doesn't work with `var` so I use let
     for (let i = 0; i < 4; i++) {
         $("#button-" + (i + 1)).on('click', function () {
             totalScore += random[i]
             $("#totalScore").text(totalScore)
             $("#message").text("")
 
-            //If the total matches with the number to guess, le winning score increases, a winner message appears and the game resets.
+            //If the total matches with the number to guess, the winning score increases, a winner message appears and the game resets.
             if (totalScore === randomNumber) {
                 wins++
                 $("#wins").text("Wins: " + wins)
-                $("#message").text("You win !")
+                $("#message").text("You Won!").css("color", "green")
                 reset()
             }
             // However, if the total is superior at the number to guess, the lossing score increases, a loser message appears and the game resets.
             else if (totalScore > randomNumber) {
                 losses++
                 $("#losses").text("Losses: " + losses)
-                $("#message").text("You lose !")
+                $("#message").text("You lost!").css("color", "red")
                 reset()  
             }
         });
     };
     $("#reset").on('click', function () {
         reset()
+        wins = 0;
+        losses = 0;
+        $("#wins").text("Wins: " + wins)
+        $("#losses").text("Losses: " + losses)
+        
     });
 
 });

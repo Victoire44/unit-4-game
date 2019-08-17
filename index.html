@@ -13,20 +13,35 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <title>Document</title>
 </head>
 
-<body style="font-family: 'Lobster', cursive;font-size: 60px;">
+<body>
 
-    <h1 class="text-center m-5">Ice-Cream Collector !</h1>
-
-
-
+    <h1 class="text-center m-5 w3-animate-zoom" style="font-family: 'Lobster', cursive;font-size: 60px;">Ice-Cream Collector !</h1>
     <div class="container mt-5">
+        <div class="card mb-5 p-3">
+            <div class="card-body"
+                style="font-family: 'Source Sans Pro', sans-serif; font-size: 20px; background: #ffeed1; line-height: 1.6">
+                <h1 style="font-family: 'Lobster', cursive; font-size: 30px; "><img src="assets/images/icecream.svg" alt="Ice cream icon" style="width: 30px">Rules</h1>
+                <p>You will be given a random number at the start of the game. There are four ice-creams.<br>
+                    By clicking on an ice-cream you will add a specific amount of points to your total score. You win
+                    the game by matching
+                    your total score to random number, you lose the game if your total score goes above the random
+                    number.<br>
+                    The value of each ice-cream is hidden from you until you click on it. Each time when the game
+                    starts,
+                    the game will change the values of each ice-cream.
+                </p>
+            </div>
+        </div>
+
+
 
         <div class="card bg-light">
-            <div class="card-body">
+            <div class="card-body" style="font-family: 'Lobster', cursive; font-size: 60px">
                 <div class="row">
                     <div class="col-md-3">
                         <img src="assets/images/ice-cream1.png" alt="ice-cream" id="button-1"
@@ -38,14 +53,14 @@
                             class="btn btn-primary img-thumbnail img-fluid mb-1">
                     </div>
 
-                    <div class="col-md-3 text-center border p-5 mb-1" alt="ice-cream" style="background: #ffeed1;">
+                    <div class="col-md-3 text-center p-5 mb-1" alt="ice-cream" style="background: #ffeed1;">
                         <div id="random-number"></div>
                     </div>
 
-                    <div class="col-md-3 border p-5 mb-1" alt="ice-cream" style="background: #ffeed1; font-size: 30px">
+                    <div class="col-md-3 border-left p-5 mb-1" alt="ice-cream" style="background: #ffeed1; font-size: 30px">
                         <div id="wins">Wins : 0</div>
                         <div id="losses">Losses : 0 </div>
-                        <div id="message" class="p-3 text-danger text-center mt-3"></div>
+                        <div id="message" class="pt-3 mt-3"></div>
                     </div>
                 </div>
 
@@ -60,22 +75,22 @@
                             class="btn btn-primary img-thumbnail img-fluid mt-1">
                     </div>
 
-                    <div class="col-md-6 border p-5 mt-1" style="background: #ffeed1;">
+                    <div class="col-md-6 p-5 mt-1" style="background: #ffeed1;">
                         <p class="text-center" style="font-size: 30px">Your total score is: </p>
-                        <div id="totalScore" class="text-center p-4"></div>
+                        <div id="totalScore" class="text-center pt-4"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-md-12 text-center">
-                <button style="font-size: 20px" class="btn btn-danger mt-4 col-md-4" id="reset" type="reset">Reset</button>
+                <button style="font-size: 20px; font-family: 'Lobster'" class="btn btn-danger mt-4 col-md-4" id="reset"
+                    type="reset">Reset</button>
 
             </div>
         </div>
 
     </div>
-
 
     <script src="assets/javascript/game.js"></script>
 </body>
